@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background: #411602;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+      nav {
+        margin: 20px 0;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      section {
+        padding: 20px;
+        margin: 20px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #35424a;
+      }
+      .skills,
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .skill,
+      .project {
+        background: #e2e2e2;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        flex: 1 1 calc(30% - 20px);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #c5bf12;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      .scroll-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #411602;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none; /* Initially hidden */
+      }
+      .scroll-btn.show {
+        display: block; /* Show button when scrolling */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>T.Harivignesh</h1>
+      <br /><br />
+      <img src="panda.jpg" alt="Flower Image" /><br />
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Welcome to my portfolio! I am Harivignesh, a passionate developer with
+        experience in various technologies. My hobbies include coding,
+        photography, and exploring new tech trends.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Python</div>
+        <div class="skill">Django</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Buster Hackathon</h3>
+          <p>
+            Developed an e-commerce awareness website to promote local
+            businesses.
+          </p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+          <h3>Animathon</h3>
+          <p>
+            Created to showcase India's innovation using Synfig, Adobe
+            Photoshop, Krita, and GIMP.
+          </p>
+          <a
+            href="https://youtu.be/qoOJsLz0aow?si=nsB3D9JcaZviV2ow"
+            target="_blank"
+            >View Project</a
+          >
+        </div>
+        <div class="project">
+          <h3>Face Detector</h3>
+          <p>
+            Analyzes and detects facial expressions using libraries like NumPy
+            and Pandas, along with K-means algorithm.
+          </p>
+          <a
+            href="https://colab.research.google.com/drive/15qa8wSwr3DjA7cbMFOOjOskTGmN0untH?usp=sharing"
+            target="_blank"
+            >View Project</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        You can reach me at:
+        <a href="mailto:harithangavel@gmail.com">harithangavel@gmail.com</a>.
+      </p>
+    </section>
+
+    <footer>
+      <p>Thank you for visiting my portfolio!</p>
+    </footer>
+
+    <button class="scroll-btn" id="scrollUpBtn">Scroll Up</button>
+    <button class="scroll-btn" id="scrollDownBtn">Scroll Down</button>
+
+    <script>
+      const scrollUpBtn = document.getElementById("scrollUpBtn");
+      const scrollDownBtn = document.getElementById("scrollDownBtn");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          scrollUpBtn.classList.add("show");
+          scrollDownBtn.classList.remove("show");
+        } else {
+          scrollUpBtn.classList.remove("show");
+          scrollDownBtn.classList.add("show");
+        }
+      };
+
+      scrollUpBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+
+      scrollDownBtn.onclick = function () {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      };
+    </script>
+  </body>
+</html>
